@@ -1,34 +1,16 @@
 package characters;
 
-public class Spell {
+public class Spell extends Weapons {
 	
-	private String spellName;
-	private int spellAttack;
-	
+	// Constructeurs
 	public Spell(String spellName, int spellAttack) {
-		super();
-		this.spellName = spellName;
-		this.spellAttack = spellAttack;
+		super(spellName, spellAttack);
 	}
 	
-	public String getSpellName() {
-		return spellName;
-	}
 
-	public void setSpellName(String spellName) {
-		this.spellName = spellName;
-	}
-
-	public int getSpellAttack() {
-		return spellAttack;
-	}
-
-	public void setSpellAttack(int spellAttack) {
-		this.spellAttack = spellAttack;
-	}
-
+	// Méthodes
 	public String toString() {
-		return "Spell [spellName=" + spellName + ", spellAttack=" + spellAttack + "]";
+		return "Sort : " + super.toString();
 	}
 		
 }

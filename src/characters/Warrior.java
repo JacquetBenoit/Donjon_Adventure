@@ -3,28 +3,26 @@ package characters;
 // Definition of the Warrior class
 public class Warrior extends Character {
 	
+	// Attributs 
 	protected int life;
 	protected int attack;
-	protected String warriorWeapon;
 	protected String warriorShield;
 	
-	// Constructor for the Warrior class without parameters
+	
+	// Constructeurs
 	public Warrior() {
 		
 		super();
 		life = super.randomiser(5, 10);
 		attack = super.randomiser(5, 10);
-		warriorWeapon = "none";
 		warriorShield = "none";
 	}
 	
-	// Constructor for the Warrior class with parameters
 	public Warrior(String name) {
 		
 		super(name);
 		life = super.randomiser(5, 10);
 		attack = super.randomiser(5, 10);
-		warriorWeapon = "none";
 		warriorShield = "none";
 		
 	}
@@ -34,16 +32,33 @@ public class Warrior extends Character {
 		super(name, image);
 		this.life = life;
 		this.attack = attack;
-		warriorWeapon = "none";
 		warriorShield = "none";
 	}
 	
+	
+	// Getters et Setters
+	public int getLife() {
+		return life;
+	}
+	public void setLife(int life) {
+		this.life = life;
+	}
+
+	public int getAttack() {
+		return attack;
+	}
+	public void setAttack(int attack) {
+		this.attack = attack;
+	}
+
+	
+	// Méthodes
 	public String toString() {
 		
 		return super.toString() + "type = Guerrier" + "\n" 
 								+ "points de vie = " + life + "\n" 
 								+ "points d'attaque =  " + attack + "\n" 
-								+ "arme = " + warriorWeapon + "\n" 
+								+ "arme = " + super.getWp() + "\n" 
 								+ "bouclier = " + warriorShield + "\n" ;
 	}
 	

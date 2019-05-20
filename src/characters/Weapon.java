@@ -1,36 +1,17 @@
 package characters;
 
-public class Weapon {
+public class Weapon extends Weapons {
 	
-	private String weaponName;
-	private int weaponAttack;
-	
-	public Weapon(String weaponName, int weaponAttack) {
-		super();
-		this.weaponName = weaponName;
-		this.weaponAttack = weaponAttack;
+	// Constructeurs
+	public Weapon(String spellName, int spellAttack) {
+		super(spellName, spellAttack);
 	}
 	
-	public String getWeaponName() {
-		return weaponName;
-	}
 
-	public void setWeaponName(String weaponName) {
-		this.weaponName = weaponName;
-	}
-
-	public int getWeaponAttack() {
-		return weaponAttack;
-	}
-
-	public void setWeaponAttack(int weaponAttack) {
-		this.weaponAttack = weaponAttack;
-	}
-
+	// Méthodes
 	public String toString() {
-		return "Weapon [weaponName=" + weaponName + ", weaponAttack=" + weaponAttack + "]";
+		return "Arme : " + super.toString();
 	}
-
 	
 }
 
