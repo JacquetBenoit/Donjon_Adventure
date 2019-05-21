@@ -50,7 +50,7 @@ public class Wizard extends Character {
 	}
 
 	
-	// Méthodes
+	// Methodes
 	public String toString() {
 		return super.toString() + "type = Magicien" + "\n" 
 								+ "points de vie = " + life + "\n" 

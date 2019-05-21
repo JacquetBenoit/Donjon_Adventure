@@ -11,7 +11,7 @@ public class Character {
 	// Constructeurs 
 	public Character() {
 		name = "Unknow";
-		image = "None";
+		image = "none";
 	}
 	
 	
@@ -41,7 +41,6 @@ public class Character {
 		this.image = image;
 	}
 
-
 	public Weapons getWp() {
 		return wp;
 	}
@@ -50,7 +49,7 @@ public class Character {
 	}
 
 
-	// Méthodes 
+	// Methodes 
 	protected int randomiser(int min, int max) {
 		int rnd = min + (int)(Math.random() * ((max - min) + 1));
 		return rnd;

@@ -52,7 +52,7 @@ public class Warrior extends Character {
 	}
 
 	
-	// Méthodes
+	// Methodes
 	public String toString() {
 		
 		return super.toString() + "type = Guerrier" + "\n" 

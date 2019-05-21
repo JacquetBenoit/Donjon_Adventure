@@ -8,7 +8,7 @@ public class Spell extends Weapons {
 	}
 	
 
-	// Méthodes
+	// Methodes
 	public String toString() {
 		return "Sort : " + super.toString();
 	}

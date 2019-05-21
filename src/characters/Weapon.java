@@ -8,7 +8,7 @@ public class Weapon extends Weapons {
 	}
 	
 
-	// Méthodes
+	// Methodes
 	public String toString() {
 		return "Arme : " + super.toString();
 	}

@@ -31,7 +31,7 @@ public class Weapons {
 	}
 	
 	
-	// Méthodes
+	// Methodes
 	public String toString() {
 		return "[nom = " + name + ", dégats = " + attack + "]";
 	}
