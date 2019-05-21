@@ -4,8 +4,6 @@ package characters;
 public class Warrior extends Character {
 	
 	// Attributs 
-	protected int life;
-	protected int attack;
 	protected String warriorShield;
 	
 	
@@ -13,8 +11,8 @@ public class Warrior extends Character {
 	public Warrior() {
 		
 		super();
-		life = super.randomiser(5, 10);
-		attack = super.randomiser(5, 10);
+		super.setLife(super.randomiser(5, 10));
+		super.setAttack(super.randomiser(5, 10));
 		warriorShield = "none";
 	}
 	
@@ -44,12 +42,7 @@ public class Warrior extends Character {
 		this.life = life;
 	}
 
-	public int getAttack() {
-		return attack;
-	}
-	public void setAttack(int attack) {
-		this.attack = attack;
-	}
+	
 
 	
 	// Methodes

@@ -3,8 +3,8 @@ package characters;
 public class Wizard extends Character {
 	
 	// Attributs 
-	protected int life;
-	protected int attack;
+
+
 	protected String wizardPhiltre;
 
 	
@@ -12,8 +12,8 @@ public class Wizard extends Character {
 	public Wizard() {	
 	
 		super();
-		life = super.randomiser(3, 6);
-		attack = super.randomiser(8, 15);
+		super.setLife(super.randomiser(3, 6));
+		super.setAttack(super.randomiser(8, 15));
 		wizardPhiltre = "none";
 	}
 	
@@ -42,13 +42,7 @@ public class Wizard extends Character {
 		this.life = life;
 	}
 
-	public int getAttack() {
-		return attack;
-	}
-	public void setAttack(int attack) {
-		this.attack = attack;
-	}
-
+	
 	
 	// Methodes
 	public String toString() {

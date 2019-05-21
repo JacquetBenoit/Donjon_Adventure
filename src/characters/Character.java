@@ -6,6 +6,8 @@ public class Character {
 	private String name;
 	private String image;
 	private Weapons wp;
+	protected int attack;
+	protected int life;
 
 
 	// Constructeurs 
@@ -46,6 +48,22 @@ public class Character {
 	}
 	public void setWp(Weapons wp) {
 		this.wp = wp;
+	}
+	
+	public int getAttack() {
+		return attack;
+	}
+	public void setAttack(int attack) {
+		this.attack = attack;
+	}
+
+
+	public int getLife() {
+		return life;
+	}
+
+	public void setLife(int life) {
+		this.life = life;
 	}
 
 

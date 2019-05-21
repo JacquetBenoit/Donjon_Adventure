@@ -18,7 +18,7 @@ public class Menu {
 	
 		// Variables
 		Boolean mainMenu = false;
-		
+		asciiWelcome();
 		//Menu principal
 		while(mainMenu == false) {
 			System.out.println("  ___ MENU PRINCIPAL _________________________  \n"+
@@ -128,7 +128,7 @@ public class Menu {
 	}
 	
 	
-	// Traiter un personnage selectionne
+	// Traiter un personnage selectionné
 	private void traiterPlayer(String  choice)
 	{
 		System.out.println(players.get(choice));
@@ -172,28 +172,55 @@ public class Menu {
 			}
 			
 			if (modify == 3) {
-				System.out.println("Modifier les points de vie");
+				System.out.println("Entrez les points de vie");
 				int newLife = sc.nextInt();
 				sc.nextLine();
-				if (players.get(choice) instanceof Warrior) {
-					((Warrior) players.get(choice)).setLife(newLife);
-				} else {
-					((Wizard) players.get(choice)).setLife(newLife);
-				}		
+				players.get(choice).setLife(newLife);
 			}
 			
 			if (modify == 4) {
-				System.out.println("Modifier les points d'attaque");
+				System.out.println("Entrez les points d'attaque");
 				int newAttack = sc.nextInt();
 				sc.nextLine();
-				if (players.get(choice) instanceof Warrior) {
-					((Warrior) players.get(choice)).setAttack(newAttack);
-				} else {
-					((Wizard) players.get(choice)).setAttack(newAttack);
-				}
+				players.get(choice).setAttack(newAttack);
 			}
 		}
 	}
 	
+	
+	public static void asciiWelcome() {
+
+        System.out.println(
+
+  
+
+            "WWWWWWWW                           WWWWWWWWEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLL                    CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE\r\n" + 
+            "W::::::W                           W::::::WE::::::::::::::::::::EL:::::::::L                 CCC::::::::::::C   OO:::::::::OO   M:::::::M             M:::::::ME::::::::::::::::::::E\n" +
+
+            "W::::::W                           W::::::WE::::::::::::::::::::EL:::::::::L               CC:::::::::::::::C OO:::::::::::::OO M::::::::M           M::::::::ME::::::::::::::::::::E\r\n" + 
+            "W::::::W                           W::::::WEE::::::EEEEEEEEE::::ELL:::::::LL              C:::::CCCCCCCC::::CO:::::::OOO:::::::OM:::::::::M         M:::::::::MEE::::::EEEEEEEEE::::E\n" +
+
+            " W:::::W           WWWWW           W:::::W   E:::::E       EEEEEE  L:::::L               C:::::C       CCCCCCO::::::O   O::::::OM::::::::::M       M::::::::::M  E:::::E       EEEEEE\r\n" + 
+            "  W:::::W         W:::::W         W:::::W    E:::::E               L:::::L              C:::::C              O:::::O     O:::::OM:::::::::::M     M:::::::::::M  E:::::E             \n" +
+
+            "   W:::::W       W:::::::W       W:::::W     E::::::EEEEEEEEEE     L:::::L              C:::::C              O:::::O     O:::::OM:::::::M::::M   M::::M:::::::M  E::::::EEEEEEEEEE   \r\n" + 
+            "    W:::::W     W:::::::::W     W:::::W      E:::::::::::::::E     L:::::L              C:::::C              O:::::O     O:::::OM::::::M M::::M M::::M M::::::M  E:::::::::::::::E   \n" +
+
+            "     W:::::W   W:::::W:::::W   W:::::W       E:::::::::::::::E     L:::::L              C:::::C              O:::::O     O:::::OM::::::M  M::::M::::M  M::::::M  E:::::::::::::::E   \r\n" + 
+            "      W:::::W W:::::W W:::::W W:::::W        E::::::EEEEEEEEEE     L:::::L              C:::::C              O:::::O     O:::::OM::::::M   M:::::::M   M::::::M  E::::::EEEEEEEEEE   \n" +
+
+            "       W:::::W:::::W   W:::::W:::::W         E:::::E               L:::::L              C:::::C              O:::::O     O:::::OM::::::M    M:::::M    M::::::M  E:::::E             \r\n" + 
+            "        W:::::::::W     W:::::::::W          E:::::E       EEEEEE  L:::::L         LLLLLLC:::::C       CCCCCCO::::::O   O::::::OM::::::M     MMMMM     M::::::M  E:::::E       EEEEEE\n" +
+
+            "         W:::::::W       W:::::::W         EE::::::EEEEEEEE:::::ELL:::::::LLLLLLLLL:::::L C:::::CCCCCCCC::::CO:::::::OOO:::::::OM::::::M               M::::::MEE::::::EEEEEEEE:::::E\r\n" + 
+            "          W:::::W         W:::::W          E::::::::::::::::::::EL::::::::::::::::::::::L  CC:::::::::::::::C OO:::::::::::::OO M::::::M               M::::::ME::::::::::::::::::::E\n" +
+
+            "           W:::W           W:::W           E::::::::::::::::::::EL::::::::::::::::::::::L    CCC::::::::::::C   OO:::::::::OO   M::::::M               M::::::ME::::::::::::::::::::E\r\n" + 
+            "            WWW             WWW            EEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLLL       CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE\n" +
+            "\n\n"
+
+        );
+
+    }
 }
 
