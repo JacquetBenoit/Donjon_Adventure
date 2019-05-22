@@ -3,6 +3,7 @@ package characters;
 import java.util.Scanner;
 import java.util.HashMap;
 //import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Menu {
 	
@@ -174,16 +175,37 @@ public class Menu {
 			
 			if (modify == 3) {
 				System.out.println("Entrez les points de vie");
-				int newLife = sc.nextInt();
-				sc.nextLine();
-				players.get(choice).setLife(newLife);
+				try {
+					int newLife = sc.nextInt();
+					sc.nextLine();
+					players.get(choice).setLife(newLife);
+				} catch(Exception e) {
+					System.out.println(e);
+				}
+				finally {
+					System.out.println("Entrez les points de vie VALEUR NUMERIQUE UNIQUEMENT");
+					sc.nextLine();
+				}
+				
+				
+				
 			}
 			
 			if (modify == 4) {
-				System.out.println("Entrez les points d'attaque");
-				int newAttack = sc.nextInt();
-				sc.nextLine();
-				players.get(choice).setAttack(newAttack);
+				try {
+					System.out.println("Entrez les points d'attaque");
+					int newAttack = sc.nextInt();
+					sc.nextLine();
+					players.get(choice).setAttack(newAttack);
+				} catch(Exception e) {
+					System.out.println(e);
+				}
+				finally {
+					System.out.println("Entrez les points d'attaque VALEUR NUMERIQUE UNIQUEMENT");
+					sc.nextLine();
+				}
+				
+				
 			}
 		}
 	}
@@ -192,7 +214,6 @@ public class Menu {
 	public static void asciiWelcome() {
 
         System.out.println(
-
             " __                                                \r\n" + 
             "/  |_  _  __ _  _ _|_ _  __    _  __ _  _ _|_ _  __\r\n" + 
             "\\__| |(_| | (_|(_  |_(/_ |    (_  | (/_(_| |_(_) | \n" +
