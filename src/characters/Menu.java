@@ -29,6 +29,7 @@ public class Menu {
             "\\______________________________________________/\n");
 			
 			int menuChoice = sc.nextInt();
+			exit = 0;
 			sc.nextLine();
 			
 			if (menuChoice == 1) {
@@ -192,31 +193,9 @@ public class Menu {
 
         System.out.println(
 
-  
-
-            "WWWWWWWW                           WWWWWWWWEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLL                    CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE\r\n" + 
-            "W::::::W                           W::::::WE::::::::::::::::::::EL:::::::::L                 CCC::::::::::::C   OO:::::::::OO   M:::::::M             M:::::::ME::::::::::::::::::::E\n" +
-
-            "W::::::W                           W::::::WE::::::::::::::::::::EL:::::::::L               CC:::::::::::::::C OO:::::::::::::OO M::::::::M           M::::::::ME::::::::::::::::::::E\r\n" + 
-            "W::::::W                           W::::::WEE::::::EEEEEEEEE::::ELL:::::::LL              C:::::CCCCCCCC::::CO:::::::OOO:::::::OM:::::::::M         M:::::::::MEE::::::EEEEEEEEE::::E\n" +
-
-            " W:::::W           WWWWW           W:::::W   E:::::E       EEEEEE  L:::::L               C:::::C       CCCCCCO::::::O   O::::::OM::::::::::M       M::::::::::M  E:::::E       EEEEEE\r\n" + 
-            "  W:::::W         W:::::W         W:::::W    E:::::E               L:::::L              C:::::C              O:::::O     O:::::OM:::::::::::M     M:::::::::::M  E:::::E             \n" +
-
-            "   W:::::W       W:::::::W       W:::::W     E::::::EEEEEEEEEE     L:::::L              C:::::C              O:::::O     O:::::OM:::::::M::::M   M::::M:::::::M  E::::::EEEEEEEEEE   \r\n" + 
-            "    W:::::W     W:::::::::W     W:::::W      E:::::::::::::::E     L:::::L              C:::::C              O:::::O     O:::::OM::::::M M::::M M::::M M::::::M  E:::::::::::::::E   \n" +
-
-            "     W:::::W   W:::::W:::::W   W:::::W       E:::::::::::::::E     L:::::L              C:::::C              O:::::O     O:::::OM::::::M  M::::M::::M  M::::::M  E:::::::::::::::E   \r\n" + 
-            "      W:::::W W:::::W W:::::W W:::::W        E::::::EEEEEEEEEE     L:::::L              C:::::C              O:::::O     O:::::OM::::::M   M:::::::M   M::::::M  E::::::EEEEEEEEEE   \n" +
-
-            "       W:::::W:::::W   W:::::W:::::W         E:::::E               L:::::L              C:::::C              O:::::O     O:::::OM::::::M    M:::::M    M::::::M  E:::::E             \r\n" + 
-            "        W:::::::::W     W:::::::::W          E:::::E       EEEEEE  L:::::L         LLLLLLC:::::C       CCCCCCO::::::O   O::::::OM::::::M     MMMMM     M::::::M  E:::::E       EEEEEE\n" +
-
-            "         W:::::::W       W:::::::W         EE::::::EEEEEEEE:::::ELL:::::::LLLLLLLLL:::::L C:::::CCCCCCCC::::CO:::::::OOO:::::::OM::::::M               M::::::MEE::::::EEEEEEEE:::::E\r\n" + 
-            "          W:::::W         W:::::W          E::::::::::::::::::::EL::::::::::::::::::::::L  CC:::::::::::::::C OO:::::::::::::OO M::::::M               M::::::ME::::::::::::::::::::E\n" +
-
-            "           W:::W           W:::W           E::::::::::::::::::::EL::::::::::::::::::::::L    CCC::::::::::::C   OO:::::::::OO   M::::::M               M::::::ME::::::::::::::::::::E\r\n" + 
-            "            WWW             WWW            EEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLLLLL       CCCCCCCCCCCCC     OOOOOOOOO     MMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE\n" +
+            " __                                                \r\n" + 
+            "/  |_  _  __ _  _ _|_ _  __    _  __ _  _ _|_ _  __\r\n" + 
+            "\\__| |(_| | (_|(_  |_(/_ |    (_  | (/_(_| |_(_) | \n" +
             "\n\n"
 
         );
