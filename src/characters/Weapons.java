@@ -1,19 +1,10 @@
 package characters;
 
-public class Weapons {
+public abstract class Weapons {
 	
 	// Attributs 
-	private String name;
-	private int attack;
-	
-	
-	// Constructeurs
-	public Weapons(String name, int attack) {
-		super();
-		this.name = name;
-		this.attack = attack;
-	}
-	
+	protected String name;
+	protected int attack;
 	
 	// Getters et Setters
 	public String getName() {
@@ -35,6 +26,5 @@ public class Weapons {
 	public String toString() {
 		return "[nom = " + name + ", dégats = " + attack + "]";
 	}
-	
 	
 }
