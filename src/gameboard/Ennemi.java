@@ -9,7 +9,7 @@ public class Ennemi extends Room {
 		super.setName("Brigand");
 		super.setType("Ennemi");
 		attack = super.randomiser(3, 10);
-		life = super.randomiser(5, 12);
+		life = super.randomiser(6, 15);
 	}
 	
 	

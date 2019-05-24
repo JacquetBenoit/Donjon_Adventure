@@ -293,24 +293,26 @@ public class Menu {
 					if (ennemiChoice.equals("1")) {
 						while (ennemi.getLife() > 0) {
 							ennemi.setLife(ennemi.getLife() - players.get(player).getAttack());
-							players.get(player).setLife(players.get(player).getLife() - ennemi.getAttack());
+							if (ennemi.getLife() > 0) {
+								players.get(player).setLife(players.get(player).getLife() - ennemi.getAttack());
+							}
 							System.out.println("Stats de votre personnage = " + players.get(player) + "\n" + " Stats de l'ennemi = " + ennemi.getLife());
 						}
 						
 					} else if (ennemiChoice.equals("2")) {
-						int random = rand(1, 2);
+						int random = rand(1, 3);
 	
-						if (random == 1) {
+						if (random > 1 && random <= 3) {
 							System.out.println("Fichtre ! Le brigand vous a ratrappé...");
 							while (ennemi.getLife() > 0) {
 								ennemi.setLife(ennemi.getLife() - players.get(player).getAttack());
 								if (ennemi.getLife() > 0) {
-									players.get(player).setLife(players.get(player).getLife() - (ennemi.getAttack() + 1));
+									players.get(player).setLife(players.get(player).getLife() - (ennemi.getAttack() + 2));
 								}
 								System.out.println("Stats de votre personnage = " + players.get(player) + "\n" + " Stats de l'ennemi = " + ennemi.getLife());
 							}
 							
-						} else if (random == 2) {
+						} else if (random == 1) {
 							System.out.println("Vous avez réussi a vous enfuir !");
 							
 						}
