@@ -41,10 +41,8 @@ public class Warrior extends Character {
 	public void setLife(int life) {
 		this.life = life;
 	}
-
 	
 
-	
 	// Methodes
 	public String toString() {
 		

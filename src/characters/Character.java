@@ -1,6 +1,6 @@
 package characters;
 
-public class Character {
+abstract class Character {
 	
 /**
  	* Attributs de la classe Character	

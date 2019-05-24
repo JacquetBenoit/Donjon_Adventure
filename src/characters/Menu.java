@@ -161,7 +161,7 @@ public class Menu {
 		
 		int modify = 0;
 		while (modify != 5) {
-			System.out.println("Modifier : Nom[1] | Image[2] | Life[3] | Attack[4] | Sortir[5]");
+			System.out.println("Modifier : Nom[1] | Image[2] | Sortir[5]");
 			modify = sc.nextInt();
 			sc.nextLine();
 			
@@ -177,40 +177,40 @@ public class Menu {
 				players.get(choice).setImage(newImage);
 			}
 			
-			if (modify == 3) {
-				System.out.println("Entrez les points de vie");
-				try {
-					int newLife = sc.nextInt();
-					sc.nextLine();
-					players.get(choice).setLife(newLife);
-				} catch(Exception e) {
-					System.out.println(e);
-					System.out.println("Entrez les points de vie VALEUR NUMERIQUE UNIQUEMENT");
-				}
-				finally {
-					System.out.println("Appuyez sur entrée");
-					sc.nextLine();
-				}	
-				
-			}
-			
-			if (modify == 4) {
-				try {
-					System.out.println("Entrez les points d'attaque");
-					int newAttack = sc.nextInt();
-					sc.nextLine();
-					players.get(choice).setAttack(newAttack);
-				} catch(Exception e) {
-					System.out.println(e);
-					System.out.println("Entrez les points d'attaque VALEUR NUMERIQUE UNIQUEMENT");
-				}
-				finally {
-					System.out.println("Appuyez sur entrée");
-					sc.nextLine();
-				}
-				
-				
-			}
+//			if (modify == 3) {
+//				System.out.println("Entrez les points de vie");
+//				try {
+//					int newLife = sc.nextInt();
+//					sc.nextLine();
+//					players.get(choice).setLife(newLife);
+//				} catch(Exception e) {
+//					System.out.println(e);
+//					System.out.println("Entrez les points de vie VALEUR NUMERIQUE UNIQUEMENT");
+//				}
+//				finally {
+//					System.out.println("Appuyez sur entrée");
+//					sc.nextLine();
+//				}	
+//				
+//			}
+//			
+//			if (modify == 4) {
+//				try {
+//					System.out.println("Entrez les points d'attaque");
+//					int newAttack = sc.nextInt();
+//					sc.nextLine();
+//					players.get(choice).setAttack(newAttack);
+//				} catch(Exception e) {
+//					System.out.println(e);
+//					System.out.println("Entrez les points d'attaque VALEUR NUMERIQUE UNIQUEMENT");
+//				}
+//				finally {
+//					System.out.println("Appuyez sur entrée");
+//					sc.nextLine();
+//				}
+//				
+//				
+//			}
 		}
 	}
 	
@@ -219,7 +219,7 @@ public class Menu {
 	private void initGame() {
 	 
 		for (int i = 0; i<board.length; i++) {
-			int rnd = Room.randomiser(0, 100);
+			int rnd = rand(0, 100);
 			
 			if (rnd >= 0 && rnd < 50) {
 				board[i] = new EmptyRoom();
@@ -258,17 +258,73 @@ public class Menu {
 		System.out.println("C'est le début de l'aventure ! ");
 		int count = 0;
 		
+		// Boucle principale de jeu
 		while (players.get(player).getLife() > 0 && count < 15) {
 			
 			System.out.println("Avancer[1]");
 			String moove = sc.nextLine();
 			
 			if (moove.equals("1")) {
-				System.out.println(board[count]);	
-			} if (board[count] instanceof Boost) {
-				System.out.println("je suis un personnage mysterieux");
-			} else if (board[count] instanceof Ennemi) {
-				System.out.println("je suis un brigand");
+				System.out.println(board[count]);
+				
+			} else {
+				System.out.println("Veuillez entrer [1] pour avancer !");
+			}
+			
+			if (players.get(player).getLife() > 0 && count != 15 && moove.equals("1")) {
+				
+				if (board[count] instanceof Boost) {
+					Boost boost = (Boost) board[count];
+					System.out.println("Un personnage mysterieux vous propose une potion. " + "\n" + "Prendre la potion[1] | passer votre chemin[2]");
+					String boostChoice = sc.nextLine();
+					
+					if (boostChoice.equals("1")) {
+						players.get(player).setLife(players.get(player).getLife() + boost.getBoostLife());
+						players.get(player).setAttack(players.get(player).getAttack() + boost.getBoostAttack());
+						System.out.println("La potion vaut: points de vies = " + boost.getBoostLife() + " points d'attaque = " + boost.getBoostAttack());
+						System.out.println("Stats de votre personnage = " + players.get(player));
+					}
+					
+				} else if (board[count] instanceof Ennemi) {
+					Ennemi ennemi = (Ennemi) board[count];
+					System.out.println("Vous tombez dans un guet-apens ! " + "\n" + "Combattre le brigand[1] | s'enfuir[2]");
+					String ennemiChoice = sc.nextLine();
+					
+					if (ennemiChoice.equals("1")) {
+						while (ennemi.getLife() > 0) {
+							ennemi.setLife(ennemi.getLife() - players.get(player).getAttack());
+							players.get(player).setLife(players.get(player).getLife() - ennemi.getAttack());
+							System.out.println("Stats de votre personnage = " + players.get(player) + "\n" + " Stats de l'ennemi = " + ennemi.getLife());
+						}
+						
+					} else if (ennemiChoice.equals("2")) {
+						int random = rand(1, 2);
+	
+						if (random == 1) {
+							System.out.println("Fichtre ! Le brigand vous a ratrappé...");
+							while (ennemi.getLife() > 0) {
+								ennemi.setLife(ennemi.getLife() - players.get(player).getAttack());
+								if (ennemi.getLife() > 0) {
+									players.get(player).setLife(players.get(player).getLife() - (ennemi.getAttack() + 1));
+								}
+								System.out.println("Stats de votre personnage = " + players.get(player) + "\n" + " Stats de l'ennemi = " + ennemi.getLife());
+							}
+							
+						} else if (random == 2) {
+							System.out.println("Vous avez réussi a vous enfuir !");
+							
+						}
+						
+					}
+					
+				}
+			}
+			if (players.get(player).getLife() <= 0) {
+				System.out.println("GAME OVER");
+				break;
+			}
+			if (count == 14) {
+				System.out.println("Bravo vous avez fini ! Quelle aventure !");
 			}
 			
 			count++;
@@ -279,10 +335,17 @@ public class Menu {
 	
 	
 	
+	private int rand(int min, int max) {
+		int rnd = min + (int)(Math.random() * ((max - min) + 1));
+		return rnd;
+	}
+	
+	
+	
 	
 	
 	// ascii
-	public static void asciiCharacter() {
+	private static void asciiCharacter() {
 
         System.out.println(
             " __                                                \r\n" + 
@@ -293,7 +356,7 @@ public class Menu {
         );
     }
 	
-	public static void asciiBanner() {
+	private static void asciiBanner() {
 		System.out.println(
 		" __                      _                        \r\n" +
 		"/   _ __  _  _  |  _    |_| _|    _ __ _|_    __ _\r\n" +

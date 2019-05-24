@@ -9,9 +9,9 @@ public class Boost extends Room {
 	
 	public Boost() {
 		super.setName("personnage mystérieux");
-		super.setType("potion");
-		boostLife = super.randomiser(0, 5);
-		boostAttack = super.randomiser(0, 5);
+		super.setType("mystére !");
+		boostLife = super.randomiser(-3, 5);
+		boostAttack = super.randomiser(-3, 5);
 	}
 
 
@@ -32,7 +32,7 @@ public class Boost extends Room {
 
 	@Override
 	public String toString() {
-		return super.toString() + " [boostLife=" + boostLife + ", boostAttack=" + boostAttack + "]";
+		return super.toString();
 	}
 	
 	

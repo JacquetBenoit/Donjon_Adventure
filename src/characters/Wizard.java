@@ -41,7 +41,6 @@ public class Wizard extends Character {
 	public void setLife(int life) {
 		this.life = life;
 	}
-
 	
 	
 	// Methodes

@@ -22,7 +22,7 @@ public class Room {
 
 
 
-	public static int randomiser(int min, int max) {
+	public int randomiser(int min, int max) {
 		int rnd = min + (int)(Math.random() * ((max - min) + 1));
 		return rnd;
 	}
@@ -30,7 +30,7 @@ public class Room {
 	
 	@Override
 	public String toString() {
-		return "Vous tombez sur un " + type + " de type " + name;
+		return "Vous tombez sur une case " + type + " de type " + name;
 	}
 	
 	
